@@ -1,0 +1,73 @@
+﻿<UserControl x:Class="FlightSimulatorApp.View.Controls.Steering2"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:FlightSimulatorApp.View.Controls"
+             xmlns:joystick = "clr-namespace:FlightSimulatorApp.View.Controls"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="450">
+    <Grid x:Name="MainGrid">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="*"/>
+
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid  Grid.Row="0" Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Slider x:Name="RudderSlider" Foreground="Blue" Grid.Column="1" Grid.Row="0" Maximum="1" Minimum="-1"  TickPlacement="BottomRight" IsSnapToTickEnabled="True"  TickFrequency="0.25" Value="{Binding RudderViewModel, Mode=OneWayToSource}" />
+            <TextBlock Grid.Column= "1" Grid.Row="1" 
+         FontWeight="Bold" FontStyle="Italic"
+         Foreground="Blue"   VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0,0,0,10">
+            rudder :
+            <Run  Text="{Binding ElementName=RudderSlider,Path=Value}"/>
+            </TextBlock>
+        </Grid>
+
+
+
+        <Slider x:Name="ThrottleSlider" Foreground="Blue" Grid.Column="0" Grid.Row="1"  Minimum="0" Maximum="1" Orientation="Vertical" TickFrequency="0.05" IsSnapToTickEnabled="True" TickPlacement="BottomRight" Value="{Binding ThrottleViewModel, Mode=OneWayToSource}"  />
+        <TextBlock Grid.Column= "0" Grid.Row="2" 
+         FontWeight="Bold" FontStyle="Italic"
+         Foreground="Blue"   VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,0,0,10">
+            Throttle :
+            <Run Text="{Binding ElementName=ThrottleSlider, Path=Value}"/>
+        </TextBlock>
+
+        <TextBlock Grid.Column= "1" Grid.Row="2" Text="← aileron → :"
+         FontWeight="Bold" FontStyle="Italic"
+         Foreground="Blue"   VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,0,0,10"/>
+        <TextBlock x:Name="AileronTextBlock"  Grid.Column= "1" Grid.Row="2" FontWeight="Bold" FontStyle="Italic"  Foreground="Blue"   VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,10,0,10" />
+        <Grid Grid.Row="1" Grid.Column="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column= "1"  Text="← elevator →"
+         FontWeight="Bold" FontStyle="Italic"
+         Foreground="Blue"   VerticalAlignment="Center"  >
+                <TextBlock.LayoutTransform>
+                    <RotateTransform Angle="90" />
+                </TextBlock.LayoutTransform>
+            </TextBlock>
+            <TextBlock x:Name="ElevatorTextBlock"  Grid.Column= "0" FontWeight="Bold" FontStyle="Italic"  Foreground="Blue"   VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5,0,5,0" >
+                <TextBlock.LayoutTransform>
+                    <RotateTransform Angle="90" />
+
+                </TextBlock.LayoutTransform>
+            </TextBlock>
+
+        </Grid>
+    </Grid>
+</UserControl>

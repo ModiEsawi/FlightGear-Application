@@ -1,0 +1,111 @@
+﻿<UserControl x:Class="FlightSimulatorApp.View.Controls.DashboardControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:FlightSimulatorApp.View.Controls"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <Style x:Key="varTB" TargetType="TextBlock">
+            <Setter Property="Margin" Value="4"/>
+            <Setter Property="TextAlignment" Value="Center"/>
+            <Setter Property="FontFamily" Value="SimSun-ExtB"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+
+        </Style>
+
+        <Style x:Key="ValueTB" TargetType="TextBlock">
+            <Setter Property="Margin" Value="1.6"/>
+            <Setter Property="FontFamily" Value="DFKai-SB"/>
+            <Setter Property="Foreground" Value="White"/>
+
+
+
+        </Style>
+    </UserControl.Resources>
+
+    <Border BorderThickness="2" BorderBrush="Black" CornerRadius="20" Margin="5">
+        <Border.Background>
+            <RadialGradientBrush>
+                <GradientStop Color="Black"/>
+                <GradientStop Color="#FF2C2BA8" Offset="1"/>
+                <GradientStop Color="#FE06061E" Offset="0.237"/>
+                <GradientStop Color="#FE242369" Offset="0.806"/>
+            </RadialGradientBrush>
+        </Border.Background>
+
+        <Grid Margin="5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            
+            <Viewbox Grid.Row="0" Grid.Column="0" Stretch="Uniform">
+                <TextBlock Text="Heading" Style="{StaticResource varTB}"/>
+            </Viewbox>
+            <Viewbox Grid.Row="0" Grid.Column="1" Stretch="Uniform">
+                <TextBlock Text="{Binding HeadingViewModel}" Style="{StaticResource ValueTB}"/>
+            </Viewbox>
+
+            <Viewbox Grid.Row="1" Grid.Column="0" Stretch="Uniform">
+                <TextBlock Text="Vertical Speed" Style="{StaticResource varTB}"/>
+            </Viewbox>
+            <Viewbox Grid.Row="1" Grid.Column="1" Stretch="Uniform">
+                <TextBlock  Text="{Binding VerticalSpeedViewModel}" Style="{StaticResource ValueTB}" />
+            </Viewbox>
+
+            <Viewbox Grid.Row="2" Grid.Column="0" Stretch="Uniform">
+                <TextBlock  Text="Ground Speed" Style="{StaticResource varTB}" />
+            </Viewbox>
+            <Viewbox Grid.Row="2" Grid.Column="1" Stretch="Uniform">
+                <TextBlock Text="{Binding GroundSpeedViewModel}" Style="{StaticResource ValueTB}" />
+            </Viewbox>
+
+            <Viewbox Grid.Row="3" Grid.Column="0" Stretch="Uniform">
+                <TextBlock  Text="Airspeed" Style="{StaticResource varTB}" />
+            </Viewbox>
+            <Viewbox Grid.Row="3" Grid.Column="1" Stretch="Uniform">
+                <TextBlock Text="{Binding AirspeedViewModel}"  Style="{StaticResource ValueTB}"/>
+            </Viewbox>
+
+            <Viewbox Grid.Row="4" Grid.Column="0" Stretch="Uniform" >
+                <TextBlock  Text="Altitude" Style="{StaticResource varTB}"/>
+            </Viewbox>
+            <Viewbox Grid.Row="4" Grid.Column="1" Stretch="Uniform">
+                <TextBlock Text="{Binding AltitudeViewModel}" Style="{StaticResource ValueTB}"/>
+            </Viewbox>
+
+            <Viewbox Grid.Row="5" Grid.Column="0" Stretch="Uniform">
+                <TextBlock Text="Roll Degree" Style="{StaticResource varTB}" />
+            </Viewbox>
+            <Viewbox Grid.Row="5" Grid.Column="1" Stretch="Uniform">
+                <TextBlock Text="{Binding RollDegViewModel}" Style="{StaticResource ValueTB}"/>
+            </Viewbox>
+
+            <Viewbox Grid.Row="6" Grid.Column="0" Stretch="Uniform">
+                <TextBlock Text="Pitch Degree" Style="{StaticResource varTB}"/>
+            </Viewbox>
+            <Viewbox Grid.Row="6" Grid.Column="1" Stretch="Uniform">
+                <TextBlock Text="{Binding PitchDegViewModel}" Style="{StaticResource ValueTB}" />
+            </Viewbox>
+            <Viewbox Grid.Row="7" Grid.Column="0" Stretch="Uniform">
+                <TextBlock Text="Altimeter Altitude" Style="{StaticResource varTB}"/>
+            </Viewbox>
+            <Viewbox Grid.Row="7" Grid.Column="1" Stretch="Uniform">
+                <TextBlock Text="{Binding AltimeterAltitudeViewModel}"  Grid.Row="7" Grid.Column="1"  Style="{StaticResource ValueTB}"/>
+            </Viewbox>
+        </Grid>
+    </Border>
+</UserControl>
