@@ -1,0 +1,4 @@
+C:\Users\Modi Esawi\OneDrive\שולחן העבודה\temp2\FlightSimulatorApp\bin\Debug\FlightSimulatorApp.exe.config
+C:\Users\Modi Esawi\OneDrive\שולחן העבודה\temp2\FlightSimulatorApp\bin\Debug\FlightSimulatorApp.exe
+C:\Users\Modi Esawi\OneDrive\שולחן העבודה\temp2\FlightSimulatorApp\bin\Debug\FlightSimulatorApp.pdb
+C:\Users\Modi Esawi\OneDrive\שולחן העבודה\temp2\FlightSimulatorApp\bin\Debug\Microsoft.Maps.MapControl.WPF.xml
